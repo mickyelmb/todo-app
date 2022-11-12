@@ -7,7 +7,7 @@ import time
 from functions import get_todos, write_todos
 now = time.strftime("%b/%d/%Y %H %M %A AM")
 print("The date and time is now", now)
-Print("Git Test")
+
 while True:
     user_action = input("Type add, show, edit, complete or exit:")
     user_action = user_action.strip()
