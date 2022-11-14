@@ -1,13 +1,19 @@
 import functions
 import PySimpleGUI as sgui
 import time
+import os
+
+if not os.path.exists("todox.txt"):
+    with open("todos.txt", "w") as file:
+        pass
 
 sgui.theme("DarkTeal9")
 TIME_FORMAT = "%b/%d/%Y %H:%M:%S"
 clock = sgui.Text('', key="clock")
 label = sgui.Text("Type in a to-do")
 input_box = sgui.InputText(tooltip="Enter todo", key="todo")
-add_button = sgui.Button("Add")
+add_button = sgui.Button("Add", size=10, tooltip="Add Todo", key="Add")
+#add_button = sgui.Button(size=2, image_source="images/enter.png", mouseover_colors="LightBlue2")
 list_box = sgui.Listbox(values=functions.get_todos(), key='todos',
                         enable_events=True, size=[45, 10])
 edit_button = sgui.Button("Edit")
